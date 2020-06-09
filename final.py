@@ -1,7 +1,6 @@
 
 from flask import Flask, render_template, request
 import Frinkiac
-import os
 import string
 import random
 import json
@@ -11,7 +10,7 @@ app = Flask(__name__)
 
 allquestions = {}
 allgames = {}
-max_questions = 2
+max_questions = 5
 
 
 screenshot = Frinkiac.random()
