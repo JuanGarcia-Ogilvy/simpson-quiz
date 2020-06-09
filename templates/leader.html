@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simpsons Quote Trivia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <script src="{{ url_for('static', filename='global.js')}}"></script>
+</head>
+
+<body id="page-question">
+  {% if completed %}
+    <h1>Congradulations! You Made It!</h1>
+    <h2>
+      You scored a:<br>
+      {% if score == 100 %}
+      <img src="/static/images/result-100.jpg">
+      {% elif score > 60 %}
+      <img src="/static/images/result-75.jpg">
+      {% else %}
+      <img src="/static/images/result-50.jpg">
+      {% endif %}
+    </h2>
+  {% endif %}
+
+  <p><a href="/">Play Again!</a></p>
+  <p>&nbsp;</p>
+  <h2>Past Players</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games %}
+        <tr>
+          <td>{{game.name}}</a></td>
+          <td align="center">{{game.score/num_questions * 100}}%</td>
+          <td>{{game.total_time|round(2, 'floor')}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p><a href="/">Play Again!</a></p>
+</body>
+
+</html>

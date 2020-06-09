@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* RESET */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, figure, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; border: 0; outline: 0; background: transparent;}
+blockquote, q { quotes: none; }
+:focus { outline: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body{
+  background-color: #fff;
+  font-family: 'Rubik', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 27px;
+  color: #53585a;
+  padding-top: 40px;
+}
+
+@media only screen and (min-width : 769px){
+  .mobile{
+      display: block !important;
+  }
+}
+@media only screen and (max-width : 768px){
+  .desktop{
+      display: none !important;
+  }
+}
+
+.nobr, .nobrk {
+  white-space: nowrap;
+}
+.clear{
+  clear: both;
+}
+
+
+#answers{
+  display: block;
+  position: relative;
+  float: none;
+  width: 100%;
+  max-width: 880px;
+  margin: 0px auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  border: 5px transparent solid;
+}
+
+#answers figure,
+#answers figure img{
+  display: block;
+  position: relative;
+  float: left;
+}
+#answers figure{
+  max-width: 400px;
+  max-height: 400px;
+  width: 30%;
+  margin: 0px 0px 2%;
+}
+#answers figure img{
+  max-width: 100%;
+}
+
+h1, h2, h3, p{
+  text-align: center;
+  padding: 0px 0px 24px;
+}
+
+h1{
+  font-size: 28px;
+}
+h2{
+  font-size: 24px;
+}
+h2 img{
+  height: auto;
+  width: auto;
+  max-width: 250px;
+  max-height: 250px;
+}
+h3{
+  font-size: 18px;
+}
+
+#page-trivia.incorrect_answer #answers{
+  border-color: red;
+}
+#page-trivia.correct_answer #answers{
+  border-color: blue;
+}
+
+table{
+  margin: 0px auto 30px;
+}
+table th,
+table td{
+  padding: 0px 10px;
+}
+
+form{
+  text-align: center;
+}

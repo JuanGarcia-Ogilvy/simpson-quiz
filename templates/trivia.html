@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simpsons Quote Trivia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <script src="{{ url_for('static', filename='global.js')}}"></script>
+</head>
+
+<body id="page-trivia">
+  <h1><img src="/static/images/h1.png"><br>
+  Question: {{question_number}}</h2>
+
+  <h2>Match the following Simpsons Quote to the image of the episode!</h2>
+
+  {% autoescape off %}
+  <h3>{{caption}}</h3>
+  {% endautoescape %}
+
+  <div id="answers" data-game="{{game_id}}" data-question="{{question_id}}">
+    {% for question in questions %}
+    <figure data-index="{{question.index}}"><img src="{{question.image}}"></figure>
+    {% endfor %}
+  </div>
+
+</body>
+
+</html>
